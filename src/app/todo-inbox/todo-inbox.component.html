@@ -1,0 +1,10 @@
+<app-todo-navbar></app-todo-navbar>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" [(opened)]="opened"> 
+        start
+    </mat-sidenav>
+    <mat-sidenav-content>
+        Content
+        <button mat-button (click)="opened=!opened">Toggle</button>
+    </mat-sidenav-content>
+</mat-sidenav-container>

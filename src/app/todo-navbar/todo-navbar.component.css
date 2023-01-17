@@ -1,0 +1,17 @@
+.navbar{
+    justify-content: space-between;
+    /* height: 8vh; */
+}
+
+.navbar button{
+    padding: 1px;
+    border: none;
+}
+
+.logo{
+    display: flex;
+}
+
+.logo button{
+    margin-left: 2px;
+}
