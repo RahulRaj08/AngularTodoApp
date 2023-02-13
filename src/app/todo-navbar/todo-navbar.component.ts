@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TodoHomeComponent } from '../todo-home/todo-home.component';
+// import { TodoInboxComponent } from '../todo-inbox/todo-inbox.component';
 
 @Component({
   selector: 'app-todo-navbar',
@@ -7,6 +9,14 @@ import { Component } from '@angular/core';
 })
 export class TodoNavbarComponent {
 
+  constructor(private hme: TodoHomeComponent) {
+
+  }
+
+  toggle(){
+    this.hme.open()
+    
+  }
   
 
 }

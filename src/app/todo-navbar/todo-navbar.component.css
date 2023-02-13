@@ -10,6 +10,7 @@
 
 .logo{
     display: flex;
+    padding: 5px;
 }
 
 .logo button{

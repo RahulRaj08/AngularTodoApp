@@ -3,7 +3,99 @@ mat-sidenav-container{
     /* height: calc(205vh - 115vh); */
 }
 
-mat-sidenav{
+/* mat-sidenav{
     width: 200px;
     background-color: #E2D1C3;
+}
+
+mat-icon{
+    vertical-align: -6px;
+    
+    
+} */
+
+.inbox-container{
+    padding: 0 15%;
+    /* height: 100%; */
+    
+
+    /* background-color: blue; */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* background-color: aqua; */
+    /* height: 80vh; */
+    
+
+}
+
+.task-form{
+    border: 0;
+}
+
+.add_task{
+    margin-block: 25px;
+}
+
+.task{
+    /* background-color: rgb(232, 230, 230); */
+    padding: 15px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    
+    
+    /* cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease; */
+
+    
+
+    
+}
+
+/* :not( .complete){
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    
+
+} */
+
+/* :not(.complete):hover{
+     box-shadow: 0 0 0 5px #eeeeee;
+    
+} */
+
+/* .task:hover{
+    box-shadow: 0 0 0 5px #eeeeee;
+    
+} */
+
+/* .task:active{
+    transform: scale(0.95);
+} */
+
+.complete{
+    text-decoration: line-through;
+    opacity: 0.7;
+    /* transform: scale(1);
+    cursor: default;
+    transition: none; */
+}
+
+.task:not(.complete){
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    
+    
+
+}
+
+.task:not(.complete):hover{
+    box-shadow: 0 0 0 5px #eeeeee;
+}
+
+.task:not(.complete):active{
+    transform: scale(0.95);
 }
