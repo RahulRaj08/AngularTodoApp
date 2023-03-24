@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { TodoLoginComponent } from './todo-login/todo-login.component';
 import { TodoRegisterComponent } from './todo-register/todo-register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +14,7 @@ import { TodoTodayComponent } from './todo-today/todo-today.component';
 import { TodoUpcomingComponent } from './todo-upcoming/todo-upcoming.component';
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { TestComponent } from './test/test.component';
+import { NewListComponent } from './new-list/new-list.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { TestComponent } from './test/test.component';
     TodoTodayComponent,
     TodoUpcomingComponent,
     TodoHomeComponent,
-    TestComponent
+    TestComponent,
+    NewListComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { TestComponent } from './test/test.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [TodoHomeComponent],
   bootstrap: [AppComponent]

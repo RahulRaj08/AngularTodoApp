@@ -1,3 +1,4 @@
+
 <div class="inbox-container">
     <div class="container ms-3 me-3 mt-2">
         <div>
@@ -5,36 +6,37 @@
         </div>
 
         <div class="task-list">
-            <div class="task active">
-                <p>This is a task</p>
+            <div class="task" *ngFor="let task of tasks">
+                <p>{{task.title}}</p>
             </div>
-            <div class="task">
-                <p>This is a task</p>
-            </div>
-            <div class="task complete">
-                <p>This is a task</p>
-            </div>
+
+            <!-- <div class="task" *ngFor="let task of tasks">
+                <p>{{task.title}}</p>
+            </div> -->
+
+            <button class="circle-add-button btn btn-success"><mat-icon class="icon">add</mat-icon></button>
+            
         </div>
         
 
-        <div class="add_task">
+        <!-- <div class="add_task">
 
             <button mat-raised-button color="accent"> <mat-icon>add_circle</mat-icon> Add Task</button>
-            <!-- <input class="form-control w-100" type="text"> -->
+            <input class="form-control w-100" type="text">
             <form>
                 <div class="form-control">
                 <div class="form-group">
-                    <!-- <label for="">Enter Tsk</label> -->
+                    <label for="">Enter Tsk</label>
                     <input type="text" placeholder="Task name" class="form-control task-form ">
                 </div>
                 <div class="form-group mt-3 mb-3">
-                    <!-- <label for="">Enter description</label> -->
+                    <label for="">Enter description</label>
                     <input type="textarea" placeholder="Enter description
                     " class="form-control task-form">
                 </div>
                 </div>
             </form>
-        </div>
+        </div> -->
 
     </div>
 </div>

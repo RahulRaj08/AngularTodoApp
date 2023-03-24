@@ -1,5 +1,5 @@
 <app-todo-navbar></app-todo-navbar>
-
+<!-- <p>home works</p> -->
 <mat-sidenav-container>
     <mat-sidenav  mode="side" [(opened)]="opened">
 
@@ -11,19 +11,18 @@
             
         </button> -->
         <div class="side-menu">
-            <a class="side-menu-item">
-                <p>List #1</p>
+            
+            <a class="side-menu-item" *ngFor="let list of lists" [routerLink]="['/lists',list._id]" routerLinkActive="active">
+                <p>{{list.title}}</p>
             </a>
-            <a class="side-menu-item">
-                <p>List #1</p>
-            </a>
-            <a class="side-menu-item">
-                <p>List #1</p>
-            </a>
+
+            <!-- <a class="side-menu-item" *ngFor="let list of lists" [routerLink]="['/lists',list._id]" routerLinkActive="active">
+                <p>{{list.title}}</p>
+            </a> -->
         </div>
 
         <div class="new-button">
-         <button class="btn btn-primary w-75">+ New List</button>
+         <button class="btn btn-primary w-75 " routerLink="/newList">+ New List</button>
 
         </div>
         

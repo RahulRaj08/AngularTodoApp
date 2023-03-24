@@ -11,9 +11,9 @@ mat-sidenav{
     
 }
 
-mat-sidenav-content{
-    /* background-color: red; */
-}
+/* mat-sidenav-content{
+    
+} */
 
 .side-menu{
     display: flex;
@@ -51,12 +51,15 @@ mat-sidenav-content{
     background-color: whitesmoke;
 }
 
-.side-menu-item:active{
-    background-color: #e3e8e7;
-}
-
+.side-menu-item.active {
+    background-color: #f8f9fa;
+  }    
 
 .new-button{
     /* background-color: rebeccapurple; */
     text-align: center;
+}
+
+a{
+    text-decoration: none;
 }

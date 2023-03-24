@@ -99,3 +99,29 @@ mat-icon{
 .task:not(.complete):active{
     transform: scale(0.95);
 }
+
+.task-list{
+    /* background-color: aqua; */
+    height: 74vh;
+    position: relative;
+}
+
+.circle-add-button{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    border-radius: 50%;
+    border: none;
+    /* background-color: #E2D1C3; */
+
+}
+
+.icon{
+    position: relative;
+    right: 3px;
+    top: 1px;
+    font-size: 30px;
+    color: white;
+}

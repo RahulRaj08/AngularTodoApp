@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NewListComponent } from './new-list/new-list.component';
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { TodoInboxComponent } from './todo-inbox/todo-inbox.component';
 import { TodoLoginComponent } from './todo-login/todo-login.component';
@@ -13,9 +14,14 @@ const routes: Routes = [
   { 
     path: '', component: TodoHomeComponent,
     children: [
-      { path: '', component:TodoInboxComponent},
+      { path: '', redirectTo:'/lists', pathMatch:'full'},
       { path: 'today', component:TodoTodayComponent},
       { path: 'inbox', component:TodoInboxComponent},
+      { path: 'newList', component:NewListComponent },
+      { path: 'lists', component:TodoInboxComponent},
+      { path: 'lists/:listId', component:TodoInboxComponent},
+      
+      
     ]
   },
 
