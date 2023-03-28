@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { TaskService } from 'services/task.service';
 
 @Component({
@@ -9,22 +10,34 @@ import { TaskService } from 'services/task.service';
 })
 export class TodoHomeComponent implements OnInit {
   lists: any
-  constructor(private taskService:TaskService) {}
+  newListCreatedSubscription: any;
+  constructor(private taskService:TaskService, private router: Router) {}
   ngOnInit(){
 
     this.taskService.getLists().subscribe((lists: any)=>{
       // console.log(lists);
       this.lists=lists
+      // this.router.navigateByUrl(`/lists/${lists[0]._id}`)
+
       
 
     })
 
-    // this.taskService.getLists().subscribe((lists:any) => {   //returns all list and stores in an array
-    //   this.lists=lists
-      
+    this.newListCreatedSubscription = this.taskService.newListCreated.subscribe(()=>{
+      this.taskService.getLists().subscribe((lists:any)=>{
+        this.lists=lists
 
-    // })
+      })
+    })
+
     
+
+    
+    
+  }
+
+  ngOnDestroy(){
+    this.newListCreatedSubscription.unsubscribe()
   }
   opened = true
 

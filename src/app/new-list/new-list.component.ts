@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { TaskService } from 'services/task.service';
+import { List } from '../models/list.model';
 
 @Component({
   selector: 'app-new-list',
@@ -17,6 +18,8 @@ export class NewListComponent {
       //After creating list, we navigate to /lists/response._id 
       // this.router.navigate(['/lists',response._id])
       this.router.navigateByUrl(`/lists/${response._id}`)
+
+      this.taskService.newListCreated.emit()//emit the event 
     })
 
   }

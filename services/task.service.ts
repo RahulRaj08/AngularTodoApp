@@ -1,4 +1,6 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { List } from 'src/app/models/list.model';
 import { WebRequestService } from './web-request.service';
 
 @Injectable({
@@ -21,6 +23,8 @@ export class TaskService {
   getTasks(listId: any){
     return this.webReqService.get(`lists/${listId}/tasks`)
   }
+
+  newListCreated = new EventEmitter() // a new event  is created to emit after new list is created
 
   
 }

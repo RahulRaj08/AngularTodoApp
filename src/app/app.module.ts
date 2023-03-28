@@ -15,6 +15,7 @@ import { TodoUpcomingComponent } from './todo-upcoming/todo-upcoming.component';
 import { TodoHomeComponent } from './todo-home/todo-home.component';
 import { TestComponent } from './test/test.component';
 import { NewListComponent } from './new-list/new-list.component';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewListComponent } from './new-list/new-list.component';
     TodoUpcomingComponent,
     TodoHomeComponent,
     TestComponent,
-    NewListComponent
+    NewListComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,

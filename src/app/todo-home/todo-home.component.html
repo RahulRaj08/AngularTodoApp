@@ -3,13 +3,7 @@
 <mat-sidenav-container>
     <mat-sidenav  mode="side" [(opened)]="opened">
 
-        <!-- <button mat-button>
-            <a routerLink='/inbox'>Inbox</a><br>
-            <a routerLink='/today'>Today</a>
-
-            
-            
-        </button> -->
+        
         <div class="side-menu">
             
             <a class="side-menu-item" *ngFor="let list of lists" [routerLink]="['/lists',list._id]" routerLinkActive="active">
@@ -29,7 +23,7 @@
     </mat-sidenav>
     <mat-sidenav-content>
         
-        <!-- <p>something</p> -->
+       
         <router-outlet></router-outlet>
         <!-- <button mat-button (click)="opened=!opened">Toggle</button> -->
         <!-- <button mat-button (click)="open()">click</button> -->

@@ -16,7 +16,10 @@ export class TodoInboxComponent implements OnInit {
   ngOnInit() {
   
     this.route.params.subscribe((params: Params)=>{
-      console.log(params);
+      
+      
+      console.log('params: ',params);
+
         this.taskService.getTasks(params['listId']).subscribe((tasks:any) =>{
           // console.log(tasks);
           this.tasks=tasks
