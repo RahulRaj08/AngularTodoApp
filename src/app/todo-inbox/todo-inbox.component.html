@@ -6,15 +6,28 @@
         </div>
 
         <div class="task-list">
-            <div class="task" *ngFor="let task of tasks">
-                <p>{{task.title}}</p>
+
+            <div *ngIf="tasks">
+                <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }" >
+                    <p>{{task.title}}</p>
+                </div>
+                <div class="empty-text" *ngIf ="tasks.length === 0">
+                    <p>There are currently no tasks! Click add button to create a new task</p>
+    
+                </div>
+
             </div>
+            <div class="empty-text" *ngIf ="!tasks">
+                <p>Please select a task</p>
+
+            </div>
+            
 
             <!-- <div class="task" *ngFor="let task of tasks">
                 <p>{{task.title}}</p>
             </div> -->
 
-            <button class="circle-add-button btn btn-success"><mat-icon class="icon">add</mat-icon></button>
+            <button routerLink="./newTask" class="circle-add-button btn btn-success"><mat-icon class="icon">add</mat-icon></button>
             
         </div>
         

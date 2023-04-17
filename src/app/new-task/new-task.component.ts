@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Params, Route, Router } from '@angular/router';
+import { TaskService } from 'services/task.service';
 
 @Component({
   selector: 'app-new-task',
@@ -7,7 +9,28 @@ import { Component } from '@angular/core';
 })
 export class NewTaskComponent {
 
+  constructor(private taskService: TaskService, private route: ActivatedRoute, private router: Router){}
+  listId: any
+  currentPath = this.route.snapshot.url.join('/');
+  ngOnInit(){
+    this.route.params.subscribe((params: Params)=>{
+      this.listId= params['listId']
+      // console.log(this.listId);
+      
+      console.log(this.currentPath);
+      
+    })
+  }
+
   createTask(title: string){
+
+    
+    this.taskService.createTask(title,this.listId).subscribe((newTask:any)=>{
+      console.log(newTask);
+      this.router.navigate(['../'], {relativeTo: this.route})
+      
+    })
+    
 
   }
 

@@ -18,10 +18,10 @@ const routes: Routes = [
       { path: '', redirectTo:'/lists', pathMatch:'full'},
       { path: 'today', component:TodoTodayComponent},
       { path: 'inbox', component:TodoInboxComponent},
-      { path: 'newTask', component:NewTaskComponent },
       { path: 'newList', component:NewListComponent },
       { path: 'lists', component:TodoInboxComponent},
       { path: 'lists/:listId', component:TodoInboxComponent},
+      { path: 'lists/:listId/newTask', component:NewTaskComponent },
       
       
     ]

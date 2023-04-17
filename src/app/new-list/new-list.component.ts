@@ -13,11 +13,11 @@ export class NewListComponent {
   constructor( private taskService:TaskService, private router: Router ){}
 
   createList(title:string){
-    this.taskService.createList(title).subscribe((response:any)=>{   //subscribe is used because post request is being returned
-      console.log(response);
+    this.taskService.createList(title).subscribe((list:List)=>{   // type is List since using any is bad practice
+      console.log(list);
       //After creating list, we navigate to /lists/response._id 
       // this.router.navigate(['/lists',response._id])
-      this.router.navigateByUrl(`/lists/${response._id}`)
+      this.router.navigateByUrl(`/lists/${list._id}`)
 
       this.taskService.newListCreated.emit()//emit the event 
     })

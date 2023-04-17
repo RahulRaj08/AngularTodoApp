@@ -1,4 +1,6 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { AuthService } from 'services/auth.service';
 
 @Component({
   selector: 'app-todo-login',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./todo-login.component.css']
 })
 export class TodoLoginComponent {
+
+  constructor(private authService: AuthService ) {}
+
+  onLoginButtonClicked(email:string, password:string){
+    this.authService.login(email,password).subscribe((res: HttpResponse<any>) => {
+      console.log(res);
+      
+    })
+
+
+  }
 
 }

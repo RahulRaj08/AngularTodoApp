@@ -45,15 +45,23 @@ mat-icon{
     padding: 15px 15px;
     border-radius: 5px;
     margin-top: 10px;
-    
-    
-    /* cursor: pointer;
-    transition: box-shadow 0.2s ease, transform 0.2s ease; */
-
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    background-color: #f7f7f7;
     
 
     
 }
+
+.task:hover{
+    box-shadow: 0 0 0 5px #eeeeee;
+}
+
+.task:active{
+    transform: scale(0.95);
+}
+
+
 
 /* :not( .complete){
     cursor: pointer;
@@ -67,16 +75,13 @@ mat-icon{
     
 } */
 
-/* .task:hover{
-    box-shadow: 0 0 0 5px #eeeeee;
-    
-} */
+
 
 /* .task:active{
     transform: scale(0.95);
 } */
 
-.complete{
+.completed{
     text-decoration: line-through;
     opacity: 0.7;
     /* transform: scale(1);
@@ -84,21 +89,21 @@ mat-icon{
     transition: none; */
 }
 
-.task:not(.complete){
+/* .task:not(.complete){
     cursor: pointer;
     transition: box-shadow 0.2s ease, transform 0.2s ease;
     
     
 
-}
+} */
 
-.task:not(.complete):hover{
+/* .task:not(.complete):hover{
     box-shadow: 0 0 0 5px #eeeeee;
-}
+} */
 
-.task:not(.complete):active{
+/* .task:not(.complete):active{
     transform: scale(0.95);
-}
+} */
 
 .task-list{
     /* background-color: aqua; */
@@ -124,4 +129,13 @@ mat-icon{
     top: 1px;
     font-size: 30px;
     color: white;
+}
+
+
+.empty-text{
+    text-align: center;
+    color: #777;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 20px;
 }
