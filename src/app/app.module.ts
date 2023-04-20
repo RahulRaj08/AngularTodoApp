@@ -17,6 +17,8 @@ import { TestComponent } from './test/test.component';
 import { NewListComponent } from './new-list/new-list.component';
 import { NewTaskComponent } from './new-task/new-task.component';
 import { WebReqInterceptor } from 'services/web-req.interceptor';
+import { EditListComponent } from './edit-list/edit-list.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { WebReqInterceptor } from 'services/web-req.interceptor';
     TodoHomeComponent,
     TestComponent,
     NewListComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    EditListComponent,
+    EditTaskComponent
   ],
   imports: [
     BrowserModule,

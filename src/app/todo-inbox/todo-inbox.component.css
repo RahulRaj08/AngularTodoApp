@@ -36,12 +36,15 @@ mat-icon{
     border: 0;
 }
 
-.add_task{
+/* .add_task{
     margin-block: 25px;
-}
+} */
 
 .task{
     /* background-color: rgb(232, 230, 230); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px 15px;
     border-radius: 5px;
     margin-top: 10px;
@@ -55,6 +58,7 @@ mat-icon{
 
 .task:hover{
     box-shadow: 0 0 0 5px #eeeeee;
+    
 }
 
 .task:active{
@@ -81,7 +85,7 @@ mat-icon{
     transform: scale(0.95);
 } */
 
-.completed{
+.completed .task-text{
     text-decoration: line-through;
     opacity: 0.7;
     /* transform: scale(1);
@@ -104,6 +108,53 @@ mat-icon{
 /* .task:not(.complete):active{
     transform: scale(0.95);
 } */
+
+
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-toggle::after {
+    display: none;
+
+}
+
+
+.icon-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.button-icons{
+    font-size: 20px;
+    width: 25px;
+    height: 20px;
+    text-align: center;
+
+}
+
+
+.task-text p{
+    margin: 0;
+
+}
+
+.task-buttons{
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.3s;
+    transform: scale(0.5);
+
+}
+
+
+.task:hover .task-buttons{
+    opacity: 1;
+    transform: scale(1);
+}
+
 
 .task-list{
     /* background-color: aqua; */

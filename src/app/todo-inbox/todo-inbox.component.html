@@ -1,41 +1,84 @@
-
 <div class="inbox-container">
     <div class="container ms-3 me-3 mt-2">
-        <div>
-            <h2>Inbox</h2>
+        <div class="top-bar">
+            <div class="title">
+                <h2>TASKS</h2>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <div class="icon-container">
+                        <mat-icon class="button-icons">settings</mat-icon>
+                    </div>
+                    
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end ">
+                    <li><a class="dropdown-item" [routerLink]="['/editList',selectedListId]">Edit List</a></li>
+                    <li><a class="dropdown-item text-danger" (click)="onDeleteListClick()">Delete List</a></li>
+                    
+                </ul>
+            </div>
         </div>
 
         <div class="task-list">
 
             <div *ngIf="tasks">
-                <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }" >
-                    <p>{{task.title}}</p>
+                <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)"
+                    [ngClass]="{ 'completed': task.completed }">
+                    <div class="task-text">
+                        <p>{{task.title}}</p>
+
+                    </div>
+                    <div class="task-buttons">
+
+                        <button class="btn btn-light" [routerLink]="['/lists', selectedListId, 'editTask', task._id]" style="background-color: #dedbdb;">
+                            <div class="icon-container">
+                                <mat-icon class="button-icons" >edit</mat-icon>
+
+                            </div>
+
+                        </button>
+
+
+                        <button class="btn btn-danger" (click)="onDeleteTaskClick(task._id)" style="margin-left: 10px;">
+                            <div class="icon-container">
+                                <mat-icon class="button-icons">delete</mat-icon>
+
+                            </div>
+                            
+                        </button>
+                        
+                    </div>
+                    
                 </div>
-                <div class="empty-text" *ngIf ="tasks.length === 0">
+                <div class="empty-text" *ngIf="tasks.length === 0">
                     <p>There are currently no tasks! Click add button to create a new task</p>
-    
+
                 </div>
 
             </div>
-            <div class="empty-text" *ngIf ="!tasks">
-                <p>Please select a task</p>
+            <div class="empty-text" *ngIf="!tasks">
+                <p>Please select a list</p>
 
             </div>
-            
+
 
             <!-- <div class="task" *ngFor="let task of tasks">
                 <p>{{task.title}}</p>
             </div> -->
 
-            <button routerLink="./newTask" class="circle-add-button btn btn-success"><mat-icon class="icon">add</mat-icon></button>
-            
+            <button (click)="onClickAddButton()" class="circle-add-button btn btn-success">
+                
+                <mat-icon class="icon">add</mat-icon>
+            </button>
+
         </div>
-        
+
 
         <!-- <div class="add_task">
 
             <button mat-raised-button color="accent"> <mat-icon>add_circle</mat-icon> Add Task</button>
-            <input class="form-control w-100" type="text">
+            <input class="form-control w-100" type="text">  
             <form>
                 <div class="form-control">
                 <div class="form-group">

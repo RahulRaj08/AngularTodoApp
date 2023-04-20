@@ -11,6 +11,9 @@ import { TaskService } from 'services/task.service';
 export class TodoHomeComponent implements OnInit {
   lists: any
   newListCreatedSubscription: any;
+  listDeletedSubscription: any;
+  listUpdatedSubscription: any;
+
   constructor(private taskService:TaskService, private router: Router) {}
   ngOnInit(){
 
@@ -30,6 +33,19 @@ export class TodoHomeComponent implements OnInit {
       })
     })
 
+    this.listDeletedSubscription = this.taskService.listDeleted.subscribe(() => {
+      this.taskService.getLists().subscribe((lists:any)=>{
+        this.lists=lists
+
+      })
+    })
+
+    this.listUpdatedSubscription = this.taskService.listUpdated.subscribe(() => {
+      this.taskService.getLists().subscribe((lists:any) =>{
+        this.lists=lists
+      })
+    })
+
     
 
     
@@ -38,6 +54,8 @@ export class TodoHomeComponent implements OnInit {
 
   ngOnDestroy(){
     this.newListCreatedSubscription.unsubscribe()
+    this.listDeletedSubscription.unsubscribe()
+    this,this.listUpdatedSubscription.unsubscribe()
   }
   opened = true
 

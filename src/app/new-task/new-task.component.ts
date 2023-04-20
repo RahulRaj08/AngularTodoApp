@@ -17,7 +17,7 @@ export class NewTaskComponent {
       this.listId= params['listId']
       // console.log(this.listId);
       
-      console.log(this.currentPath);
+      
       
     })
   }

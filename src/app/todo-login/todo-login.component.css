@@ -5,7 +5,7 @@
 
 .login-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
 }
@@ -39,6 +39,7 @@
     border: 1px solid;  
     background-color: #2196F3;
     color: #FDFCFB;
+    font-size: 18px;
 }
 
 .form a{

@@ -2,7 +2,7 @@
 <div class="global-container">
     <div class="login-container">
         <div class="title">
-            <h1>DO-It</h1>
+            <h1>Do-It</h1>
             <h2>Your simple To-Do app</h2>
         </div>
         <div class="login-form">
@@ -11,10 +11,10 @@
                 <br>
                 <input #pswInput type="password" placeholder="Password">
                 <br>
-                <button (click)="onLoginButtonClicked(emailInput.value, pswInput.value)" >Log In</button>
+                <button (click)="onLoginButtonClicked(emailInput.value, pswInput.value)" >Log in</button>
                 
                 <br>
-                <a routerLink="register">New User? Register Here</a>
+                <p>Not got an account? <a routerLink="/register">Register Here</a></p>
             </div>
         </div>
     </div>

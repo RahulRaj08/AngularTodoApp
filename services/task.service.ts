@@ -11,6 +11,10 @@ export class TaskService {
 
   constructor(private webReqService: WebRequestService) { }
 
+  getLists(){
+    return this.webReqService.get('lists')
+  }
+
   createList(title:string): Observable<List>{   // should give 'Observable<List>' since it is returning of type 'list' and not 'object'
 
     //send request to create a new list
@@ -24,9 +28,18 @@ export class TaskService {
     )
   }
 
-  getLists(){
-    return this.webReqService.get('lists')
+  updateList(id:string, title:string){
+    //we  want to send a web request to update a list
+    return this.webReqService.patch(`lists/${id}`, {title})
+
   }
+
+  deleteList(id:string){
+    return this.webReqService.delete(`lists/${id}`)
+
+  }
+
+
 
   getTasks(listId: any){
     return this.webReqService.get(`lists/${listId}/tasks`)
@@ -34,6 +47,15 @@ export class TaskService {
 
   createTask(title:string, listId:any){
     return this.webReqService.post(`lists/${listId}/tasks`, {title})
+  }
+
+  deleteTask(listId:string, taskId:string){
+    return this.webReqService.delete(`lists/${listId}/tasks/${taskId}`)
+  }
+
+  updateTask(listId:string,taskId:string,title:string){
+    return this.webReqService.patch(`lists/${listId}/tasks/${taskId}`, {title})
+
   }
 
   complete(task: Task){
@@ -44,6 +66,7 @@ export class TaskService {
   }
 
   newListCreated = new EventEmitter() // a new event  is created to emit after new list is created
-
+  listDeleted = new EventEmitter() 
+  listUpdated = new EventEmitter()
   
 }
